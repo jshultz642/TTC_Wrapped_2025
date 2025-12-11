@@ -334,10 +334,10 @@ if uploaded_file:
                                             
 #reset
     # --- Leaderboard (community) ---
-    if "leaderboard" not in st.session_state:
-        st.session_state["leaderboard"] = []
+if "leaderboard" not in st.session_state:
+    st.session_state["leaderboard"] = []
         
-        nickname = st.text_input("Enter a nickname:", "Anonymous")
+    nickname = st.text_input("Enter a nickname:", "Anonymous")
 
         # Build a stats row for this user
         stats_entry = {
