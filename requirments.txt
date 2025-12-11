@@ -1,5 +1,5 @@
 random
 streamlit
 pandas
-plotly.express
+plotly
 
