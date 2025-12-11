@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Dec 10 21:04:38 2025
+
+@author: jeshu
+"""
 import random
 import streamlit as st
 import pandas as pd
@@ -333,35 +339,35 @@ if uploaded_file:
                                             
                                             
 #reset
-    # --- Leaderboard (community) ---
+# --- Leaderboard (community) ---
 if "leaderboard" not in st.session_state:
-    st.session_state["leaderboard"] = []
+        st.session_state["leaderboard"] = []
         
-    nickname = st.text_input("Enter a nickname:", "Anonymous")
+nickname = st.text_input("Enter a nickname:", "Anonymous")
 
-    # Build a stats row for this user
-    stats_entry = {
-    "user": nickname,
-    "workout vibe": active_name,
-    "total_distance_mi": round(total_distance, 1),
-    "total_time_days": round(total_days, 1),
-    "active_days": active_days,
-    "longest_streak": longest_streak,
-    "favorite_activity": fav_activity,
-    "total_ascent_ft": int(total_ascent),
-    "max_elevation_ft": int(max_elev)
+# Build a stats row for this user
+stats_entry = {
+"user": nickname,
+"workout vibe": active_name,
+"total_distance_mi": round(total_distance, 1),
+"total_time_days": round(total_days, 1),
+"active_days": active_days,
+"longest_streak": longest_streak,
+"favorite_activity": fav_activity,
+"total_ascent_ft": int(total_ascent),
+"max_elevation_ft": int(max_elev)
         }   
 
 
-        # Append to leaderboard
-    st.session_state["leaderboard"].append(stats_entry)
+# Append to leaderboard
+st.session_state["leaderboard"].append(stats_entry)
 
-        # Convert to DataFrame
-    leaderboard_df = pd.DataFrame(st.session_state["leaderboard"])
+# Convert to DataFrame
+leaderboard_df = pd.DataFrame(st.session_state["leaderboard"])
         
-        # Display sorted by total_distance
-    st.subheader("Community Leaderboard")
-    st.dataframe(
-    leaderboard_df.sort_values("total_distance_mi", ascending=False),
-    use_container_width=True
-            )  
+# Display sorted by total_distance
+st.subheader("Community Leaderboard")
+st.dataframe(
+leaderboard_df.sort_values("total_distance_mi", ascending=False),
+            use_container_width=True
+            )   
