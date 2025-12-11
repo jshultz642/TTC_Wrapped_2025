@@ -292,7 +292,7 @@ if uploaded_file:
      return " ".join(flairs) + " " + base
 
 
-    stats_entry = {
+    year_stats = {
         #"user": nickname,
         "total_distance_mi": round(total_distance, 1),
         "total_time_days": round(total_days, 1),
@@ -303,7 +303,7 @@ if uploaded_file:
         "max_elevation_ft": int(max_elev)
         }   
 
-    active_name = generate_active_name(stats_entry)
+    active_name = generate_active_name(year_stats)
   
     #st.subheader("✨ Your Year in Workout Vibes ✨")
     #st.write(f"**{active_name}** — based on your yearly stats!")
