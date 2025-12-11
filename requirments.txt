@@ -1,4 +1,3 @@
-random
 streamlit
 pandas
 plotly
